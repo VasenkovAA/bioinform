@@ -34,7 +34,7 @@ def imports():
 def config(mo, torch):
     # Параметры эксперимента
     BATCH_SIZE = 128
-    EPOCHS = 3
+    EPOCHS = 12
     NUM_STEPS = 20
 
     INPUT_SIZE = 28 * 28
@@ -339,11 +339,8 @@ def learning_curves(plt, test_accuracies, train_accuracies, train_losses):
     return
 
 
-
 @app.cell
-def inspect_predictions(
-    torch, model, test_dataset, device, NUM_STEPS, plt, mo
-):
+def inspect_predictions(device, mo, model, plt, test_dataset, torch):
     def show_predictions():
         model.eval()
 
@@ -387,7 +384,6 @@ def inspect_predictions(
         определяет предсказанную цифру.
         """
     )
-
     return
 
 
